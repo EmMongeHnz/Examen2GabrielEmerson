@@ -26,7 +26,8 @@ class TestCocinero(unittest.TestCase):
             ["Canción 1", "Canción 2", "Canción 3"]), True)
 
     def test_ObtieneValencia2(self):
-        mc = MiClase(24736, 116, 15, ["Canción 4", "Canción 5", "Canción 6"], [0.3, 0.6, 0.5])
+        mc = MiClase(24736, 116, 15, [
+                     "Canción 4", "Canción 5", "Canción 6"], [0.3, 0.6, 0.5])
         self.assertEqual(mc.ObtieneValencia(24736), 2)
 
     def test_DivisibleTempo2(self):
@@ -44,6 +45,12 @@ class TestCocinero(unittest.TestCase):
                      "Canción 4", "Canción 5", "Canción 6"], [0.3, 0.6, 0.5])
         self.assertEqual(mc.VerificaListaCanciones(
             ["Canción 4", "Canción 5", "Canción 6"]), True)
+
+    def test_Encuentra(self):
+        mc = MiClase(24736, 116, 15, [
+                     "Canción 4", "Canción 5", "Canción 6"], [0.3, 0.6, 0.5])
+        self.assertEqual(mc.Encuentra(
+            [1, 43, 56, 78, 23, 6], 78), True)
 
 
 if __name__ == "__main__":
